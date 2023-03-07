@@ -1,0 +1,47 @@
+package StudiKasusPBO1;
+import java.util.Scanner;
+
+public class MainKaryawan {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Tuliskan berapa Karyawan yang bekerja pada hari ini:\n");
+        int jumlah = input.nextInt();
+        input.nextLine();
+        Karyawan[] dataKaryawan = new Karyawan[jumlah];
+        
+            
+        for(int i = 0; i < jumlah; i++) {
+            Karyawan karyawan = new Karyawan();
+            System.out.print("Nama: ");
+            String inputName = input.nextLine();
+            karyawan.setName(inputName);
+            System.out.print("Email: ");
+            String inputEmail = input.nextLine();
+            karyawan.setEmail(inputEmail);
+            System.out.print("Alamat: ");
+            String inputAlamat = input.nextLine();
+            karyawan.setAlamat(inputAlamat);
+            System.out.print("Nomor Telepon Karyawan: ");
+            String inputNumber = input.nextLine();
+            karyawan.setNumber(inputNumber);
+            System.out.print("Jenis Kelamin: ");
+            String inputJk = input.nextLine();
+            karyawan.setGender(inputJk);
+            System.out.print("Jadwal Kerja: ");
+            String inputJadwal = input.nextLine();
+            karyawan.setJadwal(inputJadwal);
+            System.out.print("Kategori/Divisi: ");
+            String inputKategori = input.nextLine();
+            karyawan.setJob(inputKategori);
+            dataKaryawan[i] = new Karyawan(inputName, inputEmail, inputAlamat, inputNumber, inputJk, inputJadwal, inputKategori);
+        }
+        for(int i = 0; i < dataKaryawan.length; i++) {
+            dataKaryawan[i].printDataKaryawan();
+            dataKaryawan[i].bekerja();
+        }
+    
+    }
+
+    
+    
+}
