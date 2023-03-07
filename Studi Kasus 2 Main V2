@@ -1,0 +1,92 @@
+package StudiKasusPBO1.StudiKasusNo1Hewan;
+import java.util.Scanner;
+
+public class MainHewan {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Tuliskan jumlah hewan yang masuk hari ini:");
+        int jmlh = in.nextInt();
+        in.nextLine();
+
+        Hewan[] dataHewan = new Hewan[jmlh];
+        System.out.println();
+        
+        System.out.println("Tuliskan data hewan");
+        for(int i = 0; i < jmlh; i++) {
+            Hewan hewan = new Hewan();
+            System.out.print("No. Pelanggan\t: ");
+            String nomorPelanggan = in.nextLine();
+            hewan.setNum(nomorPelanggan);
+            System.out.print("Nama Hewan\t: ");
+            String namaHewan = in.nextLine();
+            hewan.setAnimal(namaHewan);
+            System.out.print("Warna Hewan\t: ");
+            String warnaHewan = in.nextLine();
+            hewan.setWarna(warnaHewan);
+            System.out.print("Tahun Kelahiran\t: ");
+            String tahunKelahiran = in.nextLine();
+            hewan.setYear(tahunKelahiran);
+            System.out.print("Berapa jumlah vaksin yang telah diberikan kepada hewan ini: ");
+            int jumlahVaksin = in.nextInt();
+            hewan.setVaksin(jumlahVaksin);
+            in.nextLine();
+            System.out.println("Tipe Hewan(Ketikkan nomornya)\t:");
+            System.out.println("1). Anjing");
+            System.out.println("2). Kucing");
+            System.out.println("3). Kelinci");
+            String pilihan = in.nextLine();
+            if(pilihan.equalsIgnoreCase("Anjing")) {
+                System.out.print("Apakah anjing ini bekas militer? (Yes/No)");
+                String militer = in.nextLine();
+                if(militer.equalsIgnoreCase("yes") || militer.equalsIgnoreCase("y")){
+                    boolean dariMiliter = true;
+                    Hewan anjing = new Anjing(nomorPelanggan, namaHewan, warnaHewan, tahunKelahiran, pilihan, jumlahVaksin, dariMiliter);
+                    dataHewan[i] = anjing;
+                } else if(militer.equalsIgnoreCase("no") || militer.equalsIgnoreCase("n")) {
+                    boolean dariMiliter = false;
+                    Hewan anjing = new Anjing(nomorPelanggan, namaHewan, warnaHewan, tahunKelahiran, pilihan, jumlahVaksin, dariMiliter);
+                    dataHewan[i] = anjing;
+                }
+
+            } else if(pilihan.equalsIgnoreCase("Kucing")) {
+                System.out.println("Apakah kucing ini pernah dilatih? (Yes/No)");
+                String latih = in.nextLine();
+                if(latih.equalsIgnoreCase("yes") || latih.equalsIgnoreCase("y")) {
+                    boolean telahDilatih = true;
+                    Hewan kucing = new Kucing(nomorPelanggan, namaHewan, warnaHewan, tahunKelahiran, pilihan, jumlahVaksin, telahDilatih);
+                    dataHewan[i] = kucing;
+                } else if(latih.equalsIgnoreCase("yes") || latih.equalsIgnoreCase("y")) {
+                    boolean telahDilatih = false;
+                    Hewan kucing = new Kucing(nomorPelanggan, namaHewan, warnaHewan, tahunKelahiran, pilihan, jumlahVaksin, telahDilatih);
+                    dataHewan[i] = kucing;
+                }
+
+            } else if(pilihan.equalsIgnoreCase("Kelinci")) {
+                System.out.println("Apakah kelinci ini bermata merah? (Yes/No)");
+                String mata = in.nextLine();
+                if(mata.equalsIgnoreCase("yes") || mata.equalsIgnoreCase("y")) {
+                    boolean mataMerah = true;
+                    Hewan kelinci = new Kelinci(nomorPelanggan, namaHewan, warnaHewan, tahunKelahiran, pilihan, jumlahVaksin, mataMerah);
+                    dataHewan[i] = kelinci;
+                } else if(mata.equalsIgnoreCase("no") || mata.equalsIgnoreCase("n")) {
+                    boolean mataMerah = false;
+                    Hewan kelinci = new Kelinci(nomorPelanggan, namaHewan, warnaHewan, tahunKelahiran, pilihan, jumlahVaksin, mataMerah);
+                    dataHewan[i] = kelinci;
+                }
+            }
+            System.out.println();
+        }
+
+        for(int i = 0; i < dataHewan.length; i++) {
+            if(dataHewan!=null) {
+            System.out.println("*****************************************************");
+            dataHewan[i].printDataHewan();
+            dataHewan[i].infoTambahan();
+            System.out.println("*****************************************************");
+            dataHewan[i].aktivitas();
+            System.out.println();
+            }
+        }
+
+    }
+}
