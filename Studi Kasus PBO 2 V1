@@ -1,0 +1,63 @@
+package StudiKasusPBO1;
+import java.util.Scanner;
+
+public class Hewan {
+    public String noPelanggan;
+    private String namaHewan;
+    private String warnaHewan;
+    private String tahunKelahiran;
+    private String jenisHewan;
+    Scanner in = new Scanner(System.in);
+
+    public Hewan() {
+
+    }
+
+    public  Hewan(String noPelanggan, String namaHewan, String warnaHewan, String tahunKelahiran, String jenisHewan) {
+        this.noPelanggan = noPelanggan;
+        this.namaHewan = namaHewan;
+        this.warnaHewan = warnaHewan;
+        this.tahunKelahiran = tahunKelahiran;
+        this.jenisHewan = jenisHewan;
+    }
+    
+    public void setNum() {
+        System.out.print("No. Pelanggan\t\t: ");
+        this.noPelanggan = in.nextLine();
+    }
+
+    public void setAnimal() {
+        System.out.print("Nama Hewan\t\t: ");
+        this.namaHewan = in.nextLine();
+    }
+
+    public void setWarna() {
+        System.out.print("Warna Hewan\t\t: ");
+        this.warnaHewan = in.nextLine();
+    }
+
+    public void setYear() {
+        System.out.print("Tahun Kelahiran Hewan\t: ");
+        this.tahunKelahiran = in.nextLine();
+    }
+
+    public void setType() {
+        System.out.print("Jenis Hewan\t\t: ");
+        this.jenisHewan = in.nextLine();
+    }
+
+    public void print() {
+        System.out.println("Data Hewan\n" + namaHewan);
+        System.out.println("*****************************************************");
+        System.out.println("No. Pelanggan\t\t: " + noPelanggan);
+        System.out.println("Nama Hewan\t\t: " + namaHewan);
+        System.out.println("Warna Hewan\t\t: " + warnaHewan);
+        System.out.println("Tahun Kelahiran Hewan\t: " + tahunKelahiran);
+        System.out.println("Jenis Hewan\t\t: " + jenisHewan);
+        System.out.println("*****************************************************");
+    }
+
+    public void tidur() {
+        System.out.println(namaHewan + " sedang tertidur");
+    }
+}
