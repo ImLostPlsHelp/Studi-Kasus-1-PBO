@@ -1,0 +1,33 @@
+package StudiKasusPBO1;
+import java.util.Scanner;
+
+public class MainHewan {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Tuliskan jumlah hewan:");
+        int jmlh = in.nextInt();
+        in.nextLine();
+
+        Hewan[] dataHewan = new Hewan[jmlh];
+        
+        System.out.println("Tuliskan data hewan");
+        for(int i = 0; i < jmlh; i++) {
+            Hewan hewan = new Hewan();
+            hewan.setNum();
+            hewan.setAnimal();
+            hewan.setWarna();
+            hewan.setYear();
+            hewan.setType();
+            dataHewan[i] = hewan;
+            System.out.println();
+        }
+
+        for(int i = 0; i < dataHewan.length; i++) {
+            dataHewan[i].print();
+            dataHewan[i].tidur();
+            System.out.println();
+        }
+
+    }
+    
+}
