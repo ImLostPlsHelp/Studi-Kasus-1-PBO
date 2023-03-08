@@ -49,8 +49,10 @@ public class MainKaryawan {
             else if(inputKategori.equalsIgnoreCase("Groomer")){
                 System.out.print("Pengalaman Kerja\t: ");
                 String pengalamanKerja = input.nextLine();
+                System.out.print("Jumlah Layanan\t: ");
                 int jumlahLayanan = input.nextInt(); 
                 input.nextLine();
+                System.out.print("Hewan Keahlian\t: ");
                 String hewanKeahlian = input.nextLine();
                 Karyawan groomer = new Groomer(inputName, inputEmail, inputAlamat, inputNumber, inputJk, inputJk, inputKategori, pengalamanKerja, jumlahLayanan, hewanKeahlian);
                 dataKaryawan[i] = groomer;
@@ -62,6 +64,8 @@ public class MainKaryawan {
                 String inputRank = input.nextLine();
                 Karyawan admin = new Admin(inputName, inputEmail, inputAlamat, inputNumber, inputJk, inputJadwal, inputKategori, inputDept, inputRank);
                 dataKaryawan[i] = admin;
+            } else {
+                dataKaryawan[i] = new Karyawan(inputName, inputEmail, inputAlamat, inputNumber, inputJk, inputJadwal, inputKategori);
             }
         }
 
